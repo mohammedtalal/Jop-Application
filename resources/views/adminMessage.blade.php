@@ -1,5 +1,3 @@
-<h4>You are accepted for first filteration of Job.</h4>
+<p>{{ $bodyMessage }}</p>
 
-<p>We will be waiting for you at the agreed day according to your desire at 2 pm</p>
-
-<h4>Thank You</h4>
+<h3>Thank You</h3>

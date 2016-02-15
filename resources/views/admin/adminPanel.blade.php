@@ -34,8 +34,12 @@
 				      <td>{{ $person->phone }}</td>
 				      <td>{{ $person->created_at }}</td>
 				      <td>
-				      	 <a href="{{ route('admin.create') }}" class="btn btn-info">Send Email</a>
-				      	 <a href="{{ route('admin.destroy',$person->id) }}" class="btn btn-danger">Delete</a>
+				      	
+				      	 <form action="{{ route('admin.destroy',$person->id) }}" method="delete">
+				      	 	<div class="form-group">
+								<button class="btn btn-danger" type="submit">Delete App</button>
+							</div>
+				      	 </form>
 				      </td>
 			      </tr>
 				@endforeach

@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\JobRequest;
 use App\JobModel;
+use App\Repositories\MailerRepositories;
 use Illuminate\Http\Request;
 use Mail;
 
 class JobController extends Controller
 {
-
-    
+    private $mailer;
+    public function __construct(MailerRepositories $mailer){
+        $this->mailer = $mailer;
+    }
 
     /**
      * Display a listing of the resource.
@@ -47,16 +50,8 @@ class JobController extends Controller
      */
     public function store(JobRequest $request)
     {
-         //$check =  implode(', ' ,  $request->programming_lang);
-        // dd($check);
-
         JobModel::create($request->all());
-        
-       // This to send a message to Admin to know after every submit that there is anew person for the job.
-        Mail::send('mailMessage',['name'=>$request->name,'email'=>$request->email],function($msg) {
-            $msg->to('mohammed.talal2016@hotmail.com','Admin')
-            ->subject("New Allpication submitted");
-        });
+        $this->mailer->sendEmailToAdmin($request);
         return redirect()->back()->with('success','Submit Job successfully');
     }
 
@@ -102,6 +97,6 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<h1>Login</h1>
+			<h1>Admin Login</h1>
 			<hr>
 			<form method="POST" action="login">
 			{!! csrf_field() !!}

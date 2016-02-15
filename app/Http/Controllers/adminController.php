@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use App\JobModel;
+use App\Repositories\MailerRepositories;
+use Illuminate\Http\Request;
 use Mail;
-use DB;
 
 
 class adminController extends Controller
 {
-
-
-    public function __construct(){
+    /**
+     * @var mailer
+     */
+    private $mailer;
+    public function __construct(MailerRepositories $mailer){
+        $this->mailer= $mailer;
         $this->middleware('auth');
     }
 
@@ -54,21 +56,8 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {   
-        /*  
-            $request->subject
-            $request->message
-            dd($request->subject);
-
-            To Test :
-            here when i click submit without write anything into text inputs 
-            will send to static email by thier id=1 ...
-         */
-        $user = JobModel::find(1);
-         Mail::send('adminMessage',['name'=>'Admin'],function($msg) use ($user) {
-            $msg->to($user->email,'Admin')
-            ->subject('Thanks for applying Job');
-        });
-         return redirect()->back()->with('success','Message successfully send');
+        $this->mailer->sendEmailToUser($request);
+        return redirect()->back()->with('success','Message successfully send');
     }
 
     /**

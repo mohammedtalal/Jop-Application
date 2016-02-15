@@ -22,9 +22,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="{{ URL('/') }}">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="{{ route('admin.create') }}">Send Emails</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -38,7 +38,10 @@
           @else
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <strong>Welcome</strong> {{ auth()->user()->name }}
+                <li><a href="{{ URL('admin') }}">
+                      <strong>Welcome {{ auth()->user()->name }} </strong>
+                    </a>
+                </li> 
                 <!-- <span class="caret"></span> -->
                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
               </a>

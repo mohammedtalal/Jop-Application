@@ -5,7 +5,7 @@
 	{{ csrf_field() }}
 		<div class="form-group">
 			<label >To:</label>
-			<input type="email" name="email" id="email" class="form-control" value="example@hotmail.com" disabled="true" >
+			<input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}"  >
 		</div>
 		<div class="form-group">
 			<label for="subject">Subject:</label>
@@ -18,7 +18,7 @@
 			</TEXTAREA>
 		</div>
 		<div class="form-group">
-			<button class="btn btn-primary" type="submit">Submit</button>
+			<button class="btn btn-primary" type="submit">Send</button>
 		</div>
 	</form>
 @stop
