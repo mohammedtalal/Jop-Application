@@ -1,7 +1,7 @@
 <?php 
-namespace App\Repositories;
+namespace App\src;
 use Illuminate\Http\Request;
-interface MailerRepositories {
+interface MailerInterface {
 	public function sendEmailToAdmin(Request $request);
 	public function sendEmailToUser(Request $request);
 }

@@ -23,6 +23,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="{{ URL('/') }}">Home</a></li>
+            <li><a href="{{ route('admin.create') }}">Send Emails</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -30,7 +31,7 @@
             @if(!Request::is('auth/login'))
               <li><a href="{{ url('/auth/login') }}"><strong>Admin</strong> Login</a></li>
             @endif
-            <!-- @if(!Request::is('auth/register'))
+            <!-- @if(Request::is('auth/register'))
               <li><a href="{{ url('/auth/register') }}">Register</a></li>
             @endif -->
           @else
@@ -45,15 +46,17 @@
             </li>
           @endif
           </ul>
-
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
     </nav>
 
   @include('messages.flashMessage')
 
-	<div class="container">
-		@yield('content')
+	<div class="container-fluid">
+  	<div class="row">
+      @include('sideBar')
+      @yield('content')
+    </div>
 	</div>
 
 

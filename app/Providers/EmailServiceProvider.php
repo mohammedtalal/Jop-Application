@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Repositories\Mailer;
-use App\Repositories\MailerRepositories;
+use App\src\Mailer;
+use App\src\MailerInterface;
 use Illuminate\Support\ServiceProvider;
 
 class EmailServiceProvider extends ServiceProvider
@@ -25,6 +25,6 @@ class EmailServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(MailerRepositories::class, Mailer::class);
+        $this->app->bind(MailerInterface::class, Mailer::class);
     }
 }

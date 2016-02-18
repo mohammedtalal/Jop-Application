@@ -1,7 +1,8 @@
-@extends('layout')
+@extends('adminLayout')
 
 @section('content')
-	<form method="POST" action="{{ route('admin.store') }}">
+	<div class="col-sm-9 col-xs-10 content-margin-float">
+		<form method="POST" action="{{ route('admin.store') }}">
 	{{ csrf_field() }}
 		<div class="form-group">
 			<label >To:</label>
@@ -18,7 +19,8 @@
 			</TEXTAREA>
 		</div>
 		<div class="form-group">
-			<button class="btn btn-primary" type="submit">Send</button>
+			<button class="btn btn-primary" type="submit" style="float:right; padding: 7px 28px">Send</button>
 		</div>
+	</div>
 	</form>
 @stop

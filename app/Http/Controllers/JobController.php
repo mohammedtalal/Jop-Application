@@ -6,14 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\JobRequest;
 use App\JobModel;
-use App\Repositories\MailerRepositories;
+use App\src\MailerInterface;
 use Illuminate\Http\Request;
 use Mail;
 
 class JobController extends Controller
 {
     private $mailer;
-    public function __construct(MailerRepositories $mailer){
+    public function __construct(MailerInterface $mailer){
         $this->mailer = $mailer;
     }
 

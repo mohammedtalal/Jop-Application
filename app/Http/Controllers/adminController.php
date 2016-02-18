@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\JobModel;
-use App\Repositories\MailerRepositories;
+use App\User;
+use App\src\MailerInterface;
 use Illuminate\Http\Request;
 use Mail;
 
@@ -16,7 +17,7 @@ class adminController extends Controller
      * @var mailer
      */
     private $mailer;
-    public function __construct(MailerRepositories $mailer){
+    public function __construct(MailerInterface $mailer){
         $this->mailer= $mailer;
         $this->middleware('auth');
     }
@@ -36,6 +37,21 @@ class adminController extends Controller
             ],'page');
 
         return view('admin.adminPanel',compact('employee'));
+    }
+
+    public function getNewAdmin(){
+        return view('auth/newAdmin');
+    }
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postNewAdmin(Request $request){
+         User::create($request->all());
+         return redirect('admin.adminPanel');
     }
 
     /**

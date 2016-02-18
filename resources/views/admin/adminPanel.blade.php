@@ -1,24 +1,21 @@
-@extends('layout')
+@extends('adminLayout')
 
 @section('content')
-<h1>All Applications</h1>
-<!-- <a href="auth/logout">Logout</a> -->
-<hr>
-<div class="row">
+<div class="col-sm-9 col-xs-10 content-margin-float">
 	<div class="table-responsive">
 		<table class="table table-bordered table-triped">
 			 <thead>
 				<tr>
-					<td><strong>ID</strong></td>
-					<td><strong>Name</strong></td>
-					<td><strong>Email</strong></td>
-					<td><strong>Age</strong></td>
-					<td><strong>Job Type</strong></td>
-					<td><strong>Prog Lang</strong></td>
-					<td><strong>Interview Day</strong></td>
-					<td><strong>Phone</strong></td>
-					<td><strong>Created At</strong></td>
-					<td><strong>Action</strong></td>
+					<th class="span1">ID</th>
+					<th class="span4">Name</th>
+					<th class="span2">Email</th>
+					<th class="span2">Age</th>
+					<th class="span2">Job Type</th>
+					<th class="span2">Pro.language</th>
+					<th class="span2">Interview </th>
+					<th class="span2">Phone</th>
+					<th class="span1">Created At</th>
+					<th class="span2">Action</th>
 				</tr>
 			 </thead>
 			 <tbody>
@@ -47,7 +44,7 @@
 		</table>
 	</div>
 </div>
-<div class="row text-center">
+<div class="row">
 	{!! str_replace('/?', '?', $employee->render()) !!}
 </div>
 @stop
