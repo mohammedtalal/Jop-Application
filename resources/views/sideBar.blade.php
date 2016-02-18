@@ -11,17 +11,20 @@
                 <table class="table">
                     <tr>
                         <td>
-                            <span class="glyphicon glyphicon-pencil text-primary"></span><a href="{{ URL('admin') }}">Show Applications</a>
+                            <span class="glyphicon glyphicon-pencil text-primary"></span>
+                            <a href="{{ URL('admin') }}">Show Applications</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <span class="glyphicon glyphicon-flash text-success"></span><a href="{{ route('admin.create') }}">Send Emails</a>
+                            <span class="glyphicon glyphicon-flash text-success"></span>
+                            <a href="{{ route('admin.create') }}">Send Emails</a>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <span class="glyphicon glyphicon-file text-info"></span><a href="">Settings</a>
+                            <span class="glyphicon glyphicon-file text-info"></span>
+                            <a href="">Settings</a>
                         </td>
                     </tr>
                 </table>

@@ -38,10 +38,6 @@ class adminController extends Controller
 
         return view('admin.adminPanel',compact('employee'));
     }
-
-    public function getNewAdmin(){
-        return view('auth/newAdmin');
-    }
     
     /**
      * Store a newly created resource in storage.
