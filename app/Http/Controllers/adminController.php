@@ -29,8 +29,7 @@ class adminController extends Controller
      */
     public function index()
     {
-        // $employee = JobModel::all();
-        $employee = JobModel::paginate(2,
+        $employee = JobModel::paginate(3,
             [
             'id','name','email','age',
             'job_type','programming_lang','day','phone','created_at'
@@ -106,9 +105,7 @@ class adminController extends Controller
     {
         $job = JobModel::find($id);
         $job->delete();
-        if($job)
-            return redirect('admin')->with('success','Application Deleted successfully');
-        else
-            return redirect('admin')->with('danger','Application not Deleted'); 
+        if(!$job) { return redirect('admin')->with('danger','Application not Deleted'); }
+            return redirect('admin')->with('success','Application Deleted successfully');  
     }
 }

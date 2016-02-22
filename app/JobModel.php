@@ -18,7 +18,7 @@ class JobModel extends Model
             'email' ,
             'age' ,
             'job_type' ,
-            'programming_lang[]' ,
+            'programming_lang' ,
             'day',
             'phone' ,      
     ];

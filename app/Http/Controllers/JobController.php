@@ -50,7 +50,15 @@ class JobController extends Controller
      */
     public function store(JobRequest $request)
     {
-        JobModel::create($request->all());
+        JobModel::create([
+            'name'              => $request->get('name'),
+            'email'             => $request->get('email'),
+            'age'               => $request->get('age'),
+            'job_type'          => $request->get('job_type'),
+            'programming_lang'  => implode(', ' , $request->get('programming_lang')),
+            'day'               => $request->get('day'),
+            'phone'             => $request->get('phone')
+            ]);
         $this->mailer->sendEmailToAdmin($request);
         return redirect()->back()->with('success','Submit Job successfully');
     }

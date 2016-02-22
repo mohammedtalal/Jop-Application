@@ -30,7 +30,7 @@ class JobRequest extends Request
                 'job_type'          =>  'required',
             'programming_lang'      =>  'required',
                 'day'               =>  'required',
-                'phone'             =>  'required'
+                'phone'             =>  'required | min:11'
         ];
     }
 }
