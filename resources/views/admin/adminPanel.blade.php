@@ -31,14 +31,15 @@
 				      <td>{{ $person->day }}</td>
 				      <td>{{ $person->phone }}</td>
 				      <td>{{ $person->created_at->diffForHumans() }}</td>
-				      <!-- <td>
-				      	 <form action="{{ url('admin',$person->id) }}" method="delete">
+				      <td>
+				      	 <form action="admin/{{ $person->id }}" method="post">
+				      	 	{{ csrf_field() }}
 				      	 	<div class="form-group">
 								<button class="btn btn-danger" type="submit">Delete App</button>
+								<input type="hidden" name="_method" value="DELETE">
 							</div>
 				      	 </form>
-				      </td> -->
-				      <td><a href="{{ url('admin',$person->id) }}" class="btn btn-danger">Delete</a></td>
+				      </td>
 			      </tr>
 				@endforeach
 			 </tbody>

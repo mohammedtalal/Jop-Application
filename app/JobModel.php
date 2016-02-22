@@ -22,5 +22,4 @@ class JobModel extends Model
             'day',
             'phone' ,      
     ];
-
 }
