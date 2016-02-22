@@ -5,6 +5,7 @@
 	<title>Job Application</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}">
   
 </head>
 <body>

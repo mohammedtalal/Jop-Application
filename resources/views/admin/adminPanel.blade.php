@@ -4,6 +4,7 @@
 <div class="col-sm-9 col-xs-10 content-margin-float">
 	<div class="table-responsive">
 		<table class="table table-bordered table-triped">
+
 			 <thead>
 				<tr>
 					<th class="span1">ID</th>
@@ -29,22 +30,23 @@
 				      <td>{{ $person->programming_lang }}</td>
 				      <td>{{ $person->day }}</td>
 				      <td>{{ $person->phone }}</td>
-				      <td>{{ $person->created_at }}</td>
-				      <td>
-				      	
-				      	 <form action="{{ route('admin.destroy',$person->id) }}" method="delete">
+				      <td>{{ $person->created_at->diffForHumans() }}</td>
+				      <!-- <td>
+				      	 <form action="{{ url('admin',$person->id) }}" method="delete">
 				      	 	<div class="form-group">
 								<button class="btn btn-danger" type="submit">Delete App</button>
 							</div>
 				      	 </form>
-				      </td>
+				      </td> -->
+				      <td><a href="{{ url('admin',$person->id) }}" class="btn btn-danger">Delete</a></td>
 			      </tr>
 				@endforeach
 			 </tbody>
 		</table>
+		{!! str_replace('/?', '?', $employee->render()) !!}
 	</div>
-</div>
-<div class="row">
-	{!! str_replace('/?', '?', $employee->render()) !!}
+	@unless(count($employee))
+		<h3>You haven't any applications yet!</h3>
+	@endunless
 </div>
 @stop

@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fonts" horiz-adv-x="1000" >
+<font-face font-family="fonts" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="mail-alt" unicode="&#xe800;" d="M1000 454v-443q0-37-26-63t-63-27h-822q-36 0-63 27t-26 63v443q25-28 56-49 202-137 278-192 32-24 51-37t53-27 61-13h2q28 0 61 13t53 27 51 37q95 68 278 192 32 22 56 49z m0 164q0-44-27-84t-68-69q-210-146-262-181-5-4-23-17t-30-22-29-18-33-15-27-5h-2q-12 0-27 5t-33 15-29 18-30 22-23 17q-51 35-147 101t-114 80q-35 23-65 64t-31 77q0 43 23 72t66 29h822q36 0 62-26t27-63z" horiz-adv-x="1000" />
+<glyph glyph-name="doc-inv" unicode="&#xe801;" d="M571 564v264q13-8 21-16l227-228q8-7 16-20h-264z m-71-18q0-22 16-38t38-15h303v-589q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h446v-304z" horiz-adv-x="857.1" />
+<glyph glyph-name="folder" unicode="&#xe802;" d="M929 511v-393q0-51-37-88t-88-37h-679q-51 0-88 37t-37 88v536q0 51 37 88t88 37h179q51 0 88-37t37-88v-18h375q51 0 88-37t37-88z" horiz-adv-x="928.6" />
+</font>
+</defs>
+</svg>

@@ -39,16 +39,6 @@ class adminController extends Controller
         return view('admin.adminPanel',compact('employee'));
     }
     
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function postNewAdmin(Request $request){
-         User::create($request->all());
-         return redirect('admin.adminPanel');
-    }
 
     /**
      * Show the form for creating a new resource.
